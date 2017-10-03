@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         NSArray *menuOptions = @[@"Quit", @"New", @"List", @"Show", @"Find", @"History"];
         
         bool doContinue = true;
-        ContactList list = [ContactList new];
+        ContactList *list = [ContactList new];
         while (doContinue) {
             NSLog(@"\nMenu Options: \n%@", menuOptions);
             
@@ -37,9 +37,13 @@ int main(int argc, const char * argv[]) {
                 // new
                 case 1:{
                     NSLog(@"New");
-                    
-                    Contact* test = [[Contact alloc] initWithName:[inputCollector inputForPrompt:@"Name"] andEmail:[inputCollector inputForPrompt:@"Email"]];
-                    NSLog(@"%@", test.name);
+                    Contact* new = [[Contact alloc] initWithName:[inputCollector inputForPrompt:@"Name"] andEmail:[inputCollector inputForPrompt:@"Email"]];
+                    [list addContact:new];
+                    break;
+                }
+                case 2:{
+                    NSLog(@"List");
+                    NSLog(@"%@", list);
                     break;
                 }
                 default:

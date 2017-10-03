@@ -13,4 +13,5 @@
 @property (nonatomic) NSString* email;
 //@property (nonatomic) NSMutableArray* numbers;
 -(instancetype)initWithName:(NSString*)name andEmail:(NSString*)email;
+-(NSString*)getName;
 @end
