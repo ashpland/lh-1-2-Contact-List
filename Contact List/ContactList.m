@@ -9,5 +9,14 @@
 #import "ContactList.h"
 
 @implementation ContactList
-
+-(instancetype)init{
+    self = [super init];
+    if(self){
+        _contacts = [NSMutableArray new];
+    }
+    return self;
+}
+-(void)addContact:(Contact *)newContact{
+    [self.contacts addObject:newContact];
+}
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "InputCollector.h"
+#import "Contact.h"
+#import "ContactList.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -17,7 +19,7 @@ int main(int argc, const char * argv[]) {
         NSArray *menuOptions = @[@"Quit", @"New", @"List", @"Show", @"Find", @"History"];
         
         bool doContinue = true;
-        
+        ContactList list = [ContactList new];
         while (doContinue) {
             NSLog(@"\nMenu Options: \n%@", menuOptions);
             
@@ -33,9 +35,13 @@ int main(int argc, const char * argv[]) {
                     doContinue = false;
                     break;
                 // new
-                case 1:
+                case 1:{
                     NSLog(@"New");
+                    
+                    Contact* test = [[Contact alloc] initWithName:[inputCollector inputForPrompt:@"Name"] andEmail:[inputCollector inputForPrompt:@"Email"]];
+                    NSLog(@"%@", test.name);
                     break;
+                }
                 default:
                     NSLog(@"That's not an option");
                     break;
