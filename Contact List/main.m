@@ -21,19 +21,21 @@ int main(int argc, const char * argv[]) {
         while (doContinue) {
             NSLog(@"\nMenu Options: \n%@", menuOptions);
             
-            //NSString *menuChoice = [inputCollector inputForPrompt:@"Choice:"];
-            NSString *fakeChoice = @"Quit";
+            NSString *menuChoice = [inputCollector inputForPrompt:@"Choice"];
+            //NSString *fakeChoice = @"Quit";
             
-            NSUInteger choice = [menuOptions indexOfObject:fakeChoice];
+            NSUInteger choice = [menuOptions indexOfObject:menuChoice];
 
             switch (choice) {
                 // quit
                 case 0:
-                    NSLog(@"Zero Case");
+                    NSLog(@"Adieu!");
                     doContinue = false;
                     break;
+                // new
                 case 1:
                     NSLog(@"New");
+                    break;
                 default:
                     NSLog(@"That's not an option");
                     break;
