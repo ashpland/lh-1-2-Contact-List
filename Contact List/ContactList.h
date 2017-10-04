@@ -12,7 +12,7 @@
 @interface ContactList : NSObject
 @property (nonatomic) NSMutableArray *contacts;
 
--(void)addContact:(Contact *)newContact;
+-(bool)addContact:(Contact *)newContact;
 -(Contact *)getContactAtIndex:(int)index;
 -(ContactList *)findContactContaining:(NSString *)string;
 @end

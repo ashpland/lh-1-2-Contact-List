@@ -53,7 +53,9 @@ int main(int argc, const char * argv[]) {
                 case 1:{
                     NSLog(@"New");
                     Contact* new = [[Contact alloc] initWithName:[inputCollector inputForPrompt:@"Name"] andEmail:[inputCollector inputForPrompt:@"Email"]];
-                    [list addContact:new];
+                    if(![list addContact:new]){
+                        NSLog(@"Email already exists.");
+                    }
                     break;
                 }
                 // list

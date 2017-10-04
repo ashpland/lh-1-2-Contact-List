@@ -16,8 +16,13 @@
     }
     return self;
 }
--(void)addContact:(Contact *)newContact{
-    [self.contacts addObject:newContact];
+-(bool)addContact:(Contact *)newContact{
+    ContactList *checkResults = [self findContactContaining:newContact.email];
+    if (checkResults.contacts.count == 0) {
+        [self.contacts addObject:newContact];
+        return true;
+    }
+    return false;
 }
 
 - (NSString *)description
