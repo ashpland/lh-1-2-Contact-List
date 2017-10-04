@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		491A5DB41F8435BB00B327A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A5DB31F8435BB00B327A5 /* main.m */; };
 		491A5DBC1F8436B200B327A5 /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A5DBB1F8436B200B327A5 /* InputCollector.m */; };
+		491A5DBF1F8467F000B327A5 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A5DBE1F8467F000B327A5 /* Number.m */; };
 		9381521A1F84505C004974F6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 938152191F84505C004974F6 /* Contact.m */; };
 		9381521D1F845075004974F6 /* ContactList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9381521C1F845075004974F6 /* ContactList.m */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,8 @@
 		491A5DB31F8435BB00B327A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		491A5DBA1F8436B200B327A5 /* InputCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputCollector.h; sourceTree = "<group>"; };
 		491A5DBB1F8436B200B327A5 /* InputCollector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCollector.m; sourceTree = "<group>"; };
+		491A5DBD1F8467F000B327A5 /* Number.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Number.h; sourceTree = "<group>"; };
+		491A5DBE1F8467F000B327A5 /* Number.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Number.m; sourceTree = "<group>"; };
 		938152181F84505C004974F6 /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		938152191F84505C004974F6 /* Contact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		9381521B1F845075004974F6 /* ContactList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactList.h; sourceTree = "<group>"; };
@@ -67,11 +70,13 @@
 			isa = PBXGroup;
 			children = (
 				491A5DB31F8435BB00B327A5 /* main.m */,
-				491A5DBA1F8436B200B327A5 /* InputCollector.h */,
+				491A5DBD1F8467F000B327A5 /* Number.h */,
+				491A5DBE1F8467F000B327A5 /* Number.m */,
 				938152181F84505C004974F6 /* Contact.h */,
 				938152191F84505C004974F6 /* Contact.m */,
 				9381521B1F845075004974F6 /* ContactList.h */,
 				9381521C1F845075004974F6 /* ContactList.m */,
+				491A5DBA1F8436B200B327A5 /* InputCollector.h */,
 				491A5DBB1F8436B200B327A5 /* InputCollector.m */,
 			);
 			path = "Contact List";
@@ -138,6 +143,7 @@
 				491A5DBC1F8436B200B327A5 /* InputCollector.m in Sources */,
 				9381521A1F84505C004974F6 /* Contact.m in Sources */,
 				491A5DB41F8435BB00B327A5 /* main.m in Sources */,
+				491A5DBF1F8467F000B327A5 /* Number.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

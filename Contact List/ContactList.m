@@ -27,12 +27,13 @@
 
 - (NSString *)description
 {
-    NSMutableString* names = [NSMutableString new];
+    NSMutableString* listOfContacts = [NSMutableString new];
     for(int i = 0; i < self.contacts.count; i++){
-        NSString* temp = [NSString stringWithFormat:@"%d:<%@> (%@)\n",i,[self.contacts[i] getName], [self.contacts[i] getEmail]];
-        [names appendString:temp];
+        NSString* temp = [NSString stringWithFormat:@"%d:%@",i,self.contacts[i]];
+        [listOfContacts appendString:temp];
     }
-    return names;
+    
+    return listOfContacts;
 }
 
 -(Contact *)getContactAtIndex:(int)index{

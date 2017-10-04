@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
         
         InputCollector *inputCollector = [InputCollector new];
         
-        NSArray *menuOptions = @[@"Quit", @"New", @"List", @"Show", @"Find", @"History"];
+        NSArray *menuOptions = @[@"Quit", @"New", @"List", @"Show", @"Find", @"Number", @"History"];
         
         bool doContinue = true;
         ContactList *list = [ContactList new];
@@ -24,7 +24,10 @@ int main(int argc, const char * argv[]) {
         // Fake People!
         
         Contact* fake1 = [[Contact alloc] initWithName:@"Bob" andEmail:@"bob@burgers.com"];
+        [fake1 addNewPhone:@"Mobile" andNumber:@"555-8099"];
         [list addContact:fake1];
+        [fake1 addNewPhone:@"Home" andNumber:@"555-2799"];
+        
         Contact* fake2 = [[Contact alloc] initWithName:@"Gene" andEmail:@"Gene@burgers.com"];
         [list addContact:fake2];
         Contact* fake3 = [[Contact alloc] initWithName:@"Trash King" andEmail:@"trash@burgers.com"];
@@ -61,15 +64,15 @@ int main(int argc, const char * argv[]) {
                 // list
                 case 2:{
                     NSLog(@"List");
-                    NSLog(@"%@", list);
+                    NSLog(@"\n%@", list);
                     break;
                 }
                 //show
                 case 3:{
                     NSLog(@"Show");
-                    if (explodedResponse[1]){
+                    if (explodedResponse.count > 1){
                         int index = [explodedResponse[1] intValue];
-                        NSLog(@"%@", [list getContactAtIndex:index]);
+                        NSLog(@"\n%@", [list getContactAtIndex:index]);
                     }
                     else{
                         NSLog(@"Please enter an index number");
@@ -93,6 +96,23 @@ int main(int argc, const char * argv[]) {
                         NSLog(@"Please enter a search string");
                     }
                     
+                    
+                    
+                    break;
+                }
+                    
+                // number
+                case 5: {
+                    NSLog(@"Number");
+                    NSLog(@"%@", list);
+                    
+                    int index = (int)[[inputCollector inputForPrompt:@"Choose a contact"] integerValue];
+                    Contact *needsNumber =[list getContactAtIndex:index];
+                    [needsNumber addNewPhone:[inputCollector inputForPrompt:@"Phone Name"] andNumber:[inputCollector inputForPrompt:@"Phone Number"]];
+                    
+                    
+                    NSLog(@"%@", needsNumber);
+
                     
                     
                     break;
