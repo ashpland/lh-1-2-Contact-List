@@ -74,6 +74,28 @@ int main(int argc, const char * argv[]) {
                     }
                     break;
                 }
+                //find
+                case 4:{
+                    NSLog(@"Find");
+                    
+                    if (explodedResponse[1]){
+                        ContactList *searchResults = [list findContactContaining:explodedResponse[1]];
+                        if(searchResults.contacts.count > 0){
+                            NSLog(@"%@", searchResults);
+                        }
+                        else {
+                            NSLog(@"No results found :(");
+                        }
+                    }
+                    else{
+                        NSLog(@"Please enter a search string");
+                    }
+                    
+                    
+                    
+                    break;
+                }
+                    
                 default:
                     NSLog(@"That's not an option");
                     break;

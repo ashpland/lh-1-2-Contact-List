@@ -24,7 +24,7 @@
 {
     NSMutableString* names = [NSMutableString new];
     for(int i = 0; i < self.contacts.count; i++){
-        NSString* temp = [NSString stringWithFormat:@"%d:<%@> ()\n",i,[self.contacts[i] getName]];
+        NSString* temp = [NSString stringWithFormat:@"%d:<%@> (%@)\n",i,[self.contacts[i] getName], [self.contacts[i] getEmail]];
         [names appendString:temp];
     }
     return names;
@@ -33,5 +33,18 @@
 -(Contact *)getContactAtIndex:(int)index{
     return self.contacts[index];
 }
+
+-(ContactList *)findContactContaining:(NSString *)searchString{
+    ContactList *searchResults = [ContactList new];
+    for (Contact *contact in self.contacts){
+        if ([contact.name containsString:searchString] || [contact.email containsString:searchString]){
+            [searchResults addContact:contact];
+        }
+    }
+    
+    return searchResults;
+}
+
+
 
 @end

@@ -14,4 +14,5 @@
 
 -(void)addContact:(Contact *)newContact;
 -(Contact *)getContactAtIndex:(int)index;
+-(ContactList *)findContactContaining:(NSString *)string;
 @end
