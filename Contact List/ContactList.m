@@ -29,4 +29,9 @@
     }
     return names;
 }
+
+-(Contact *)getContactAtIndex:(int)index{
+    return self.contacts[index];
+}
+
 @end

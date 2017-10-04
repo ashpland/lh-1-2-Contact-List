@@ -20,12 +20,27 @@ int main(int argc, const char * argv[]) {
         
         bool doContinue = true;
         ContactList *list = [ContactList new];
+        
+        // Fake People!
+        
+        Contact* fake1 = [[Contact alloc] initWithName:@"Bob" andEmail:@"bob@burgers.com"];
+        [list addContact:fake1];
+        Contact* fake2 = [[Contact alloc] initWithName:@"Gene" andEmail:@"Gene@burgers.com"];
+        [list addContact:fake2];
+        Contact* fake3 = [[Contact alloc] initWithName:@"Trash King" andEmail:@"trash@burgers.com"];
+        [list addContact:fake3];
+        
+        
         while (doContinue) {
             NSLog(@"\nMenu Options: \n%@", menuOptions);
             
-            NSString *menuChoice = [inputCollector inputForPrompt:@"Choice"];
+            NSString *menuResponse = [inputCollector inputForPrompt:@"Choice"];
             //NSString *fakeChoice = @"Quit";
             
+            NSArray *explodedResponse = [menuResponse componentsSeparatedByString:@" "];
+            
+            NSString *menuChoice = explodedResponse[0];
+
             NSUInteger choice = [menuOptions indexOfObject:menuChoice];
 
             switch (choice) {
@@ -41,9 +56,22 @@ int main(int argc, const char * argv[]) {
                     [list addContact:new];
                     break;
                 }
+                // list
                 case 2:{
                     NSLog(@"List");
                     NSLog(@"%@", list);
+                    break;
+                }
+                //show
+                case 3:{
+                    NSLog(@"Show");
+                    if (explodedResponse[1]){
+                        int index = [explodedResponse[1] intValue];
+                        NSLog(@"%@", [list getContactAtIndex:index]);
+                    }
+                    else{
+                        NSLog(@"Please enter an index number");
+                    }
                     break;
                 }
                 default:
