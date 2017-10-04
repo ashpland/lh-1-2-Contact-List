@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface InputCollector : NSObject
+@property (nonatomic) NSArray* historyArray;
 
 -(NSString *)inputForPrompt:(NSString *)promptString;
+-(NSString *)inputForPromptWithLog:(NSString *)promptString;
+
 
 @end

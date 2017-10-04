@@ -37,8 +37,7 @@ int main(int argc, const char * argv[]) {
         while (doContinue) {
             NSLog(@"\nMenu Options: \n%@", menuOptions);
             
-            NSString *menuResponse = [inputCollector inputForPrompt:@"Choice"];
-            //NSString *fakeChoice = @"Quit";
+            NSString *menuResponse = [inputCollector inputForPromptWithLog:@"Choice"];
             
             NSArray *explodedResponse = [menuResponse componentsSeparatedByString:@" "];
             
@@ -117,6 +116,13 @@ int main(int argc, const char * argv[]) {
                     
                     break;
                 }
+                   
+                // history
+                case 6:{
+                    NSLog(@"\n%@",inputCollector);
+                    break;
+                }
+                    
                     
                 default:
                     NSLog(@"That's not an option");

@@ -20,4 +20,30 @@
     
 }
 
+-(NSString *)inputForPromptWithLog:(NSString *)promptString{
+    NSString *input = [self inputForPrompt:promptString];
+    self.historyArray = [[NSArray alloc] initWithObjects:input, self.historyArray[0], self.historyArray[1], self.historyArray[2], nil];
+    return input;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _historyArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"", nil];
+    }
+    return self;
+}
+
+- (NSString *)description
+{
+    NSMutableString *historyOutput = [NSMutableString new];
+    for(NSString *history in self.historyArray){
+        NSString* temp = [NSString stringWithFormat:@"%@\n", history];
+        [historyOutput appendString:temp];
+    }
+    return historyOutput;
+}
+
+
 @end
